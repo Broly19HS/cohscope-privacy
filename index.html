@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Privacy policy for COHScope, an independent Company of Heroes 3 statistics Android app.">
+  <title>COHScope — Privacy Policy</title>
+  <style>
+    :root { color-scheme: dark; --bg:#111827; --paper:#1d293a; --text:#eef3f9; --muted:#b9c7d8; --accent:#9fe1c9; --border:#3a485b; }
+    @media (prefers-color-scheme: light) { :root { color-scheme: light; --bg:#f6f8fb; --paper:#ffffff; --text:#142232; --muted:#46596c; --accent:#116e58; --border:#dce3ec; } }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; padding:2rem 1rem 5rem; background:var(--bg); color:var(--text); font: 1rem/1.75 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:820px; margin:auto; }
+    header { margin:0 0 2rem; }
+    .eyebrow { color:var(--accent); letter-spacing:.12em; text-transform:uppercase; font-weight:700; font-size:.8rem; }
+    h1 { font-size:clamp(2.1rem,5vw,3rem); margin:.45rem 0 .4rem; line-height:1.18; }
+    h2 { font-size:1.25rem; line-height:1.35; margin:2.5rem 0 .7rem; }
+    p, li { color:var(--muted); }
+    strong { color:var(--text); }
+    a { color:var(--accent); text-underline-offset:.19em; }
+    a:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    .lead { max-width:70ch; font-size:1.1rem; }
+    .meta { color:var(--muted); margin:0; font-size:.95rem; }
+    .panel { background:var(--paper); border:1px solid var(--border); border-radius:15px; padding:1.5rem clamp(1.2rem,4vw,2.5rem); }
+    .notice { padding:1rem 1.25rem; margin:1.4rem 0; border:1px solid var(--border); border-left:4px solid var(--accent); background:var(--paper); border-radius:9px; }
+    .notice p { margin:0; }
+    ul { padding-left:1.4rem; }
+    code { font-size:.92em; overflow-wrap:anywhere; }
+    footer { border-top:1px solid var(--border); margin-top:3rem; padding-top:1rem; color:var(--muted); font-size:.9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">COHScope · Android</div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: 24 October 2026</p>
+    <p class="lead">COHScope is an independently developed, unofficial statistics companion for Company of Heroes 3. This policy describes how the app handles game information, local storage, network requests, and Android backups.</p>
+  </header>
+  <article class="panel">
+    <h2 id="controller">1. Publisher and contact</h2>
+    <p><strong>App:</strong> COHScope<br>
+       <strong>Responsible publisher / data controller:</strong> Hasan Saker (individual developer)<br>
+       <strong>Privacy inquiries:</strong> <a href="mailto:broly19hs@gmail.com">broly19hs@gmail.com</a></p>
+
+    <h2 id="information">2. Information handled by the app</h2>
+    <p>COHScope displays and analyzes publicly available game-related information, which may include player aliases, Relic profile IDs, leaderboard ratings and rankings, competitive match results, participants, maps, factions, and historical match-time ratings. Player aliases and IDs can be personal data if linked to an identifiable person.</p>
+    <p>When you search for a player, the app handles the player alias that you enter. COHScope does not require you to register a COHScope account.</p>
+
+    <h2 id="external">3. External game-data services</h2>
+    <p><strong>Relic Entertainment:</strong> The app makes HTTPS requests to <code>coh3-api.reliclink.com</code> for game data. Depending on the feature, requests include a searched player alias or a Relic profile identifier. This information is used to retrieve player statistics and recent match data.</p>
+    <p><strong>COH3 Stats:</strong> The app incorporates dated open-data snapshots from COH3 Stats and may download leaderboard snapshot files via HTTPS from <code>storage.coh3stats.com</code>. Snapshot downloads use date, faction and game-mode information in their request paths.</p>
+    <p>As with normal internet requests, these providers may receive technical connection information, including the requesting IP address. COHScope does not control their server-side logging or retention practices.</p>
+    <p>For source information, see <a href="https://coh3stats.com/other/open-data" rel="noopener noreferrer">COH3 Stats Open Data</a>.</p>
+
+    <h2 id="storage">4. Storage on your device</h2>
+    <p>The app maintains SQLite databases within its Android application storage. They contain historical competitive match records, match-time ratings, player-statistics caches, and leaderboard snapshots. This enables faster access to previously downloaded data and preservation of locally accumulated match history.</p>
+    <p>The current coverage targets available competitive PvP match information from 1 September 2026 onward. Coverage is dependent on available source data and does not represent any player's guaranteed complete lifetime record.</p>
+    <p>The release described here does not require an account on a COHScope-operated service, and no public developer-operated match-history backend is configured.</p>
+
+    <h2 id="backups">5. Android backups and device transfer</h2>
+    <p>COHScope permits Android to include the match-history and match-time-rating databases in supported operating-system cloud backups and device-to-device transfers. Whether a backup happens depends on device support, backup provider, user settings, and applicable quota limits.</p>
+    <p>The app's backup allowlist does not include the rebuildable leaderboard and player-statistics caches. Data placed in an Android or Google-managed backup environment is subject to the provider's separate handling, security, retention, and deletion mechanisms. Restoring a backup is not guaranteed.</p>
+
+    <h2 id="purposes">6. Purposes and security</h2>
+    <p>Game-related information is processed to perform player lookup, retrieve and display statistics and leaderboards, analyze matches, and support local history and caching. The production data-provider requests identified in the app audit use HTTPS. On-device databases benefit from Android's application-storage protections; platform-managed backups use the relevant provider's security mechanisms.</p>
+
+    <h2 id="analytics">7. Analytics and advertising</h2>
+    <p>COHScope version 1.0.0 does not integrate an advertising SDK or third-party application-analytics SDK. This does not affect data processing that external game-data services may perform when contacted or platform-level diagnostics controlled by Android or Google.</p>
+
+    <h2 id="retention">8. Retention and deletion</h2>
+    <p>Locally accumulated game information generally remains in the app's databases until deleted as a result of clearing the application's storage, uninstalling the app, or other device storage operations. There is no in-app COHScope account to delete.</p>
+    <p><strong>Clearing COHScope application storage can permanently erase match history that is not backed up.</strong> Android may restore backed-up information after reinstallation depending on user and device settings. To manage or remove platform backups, use the settings and controls provided by the backup service.</p>
+    <p>COHScope cannot directly delete records held independently by Relic, COH3 Stats, or Android backup providers.</p>
+
+    <h2 id="rights">9. Privacy inquiries and rights</h2>
+    <p>For questions, requests, or concerns about the app's handling of information, email <a href="mailto:broly19hs@gmail.com">broly19hs@gmail.com</a>. Depending on applicable law and circumstances, data subjects may have rights of access, correction, deletion, restriction, objection, and complaint to a competent supervisory authority. Requests involving data held by independent providers may need to be addressed to those providers.</p>
+
+    <h2 id="changes">10. Changes to this policy</h2>
+    <p>This page may be updated when the app's features or data-handling practices change. The revision date at the top will identify the current version.</p>
+
+    <h2 id="independence">11. Independent project</h2>
+    <p>COHScope is not affiliated with, endorsed by, sponsored by, or operated by Relic Entertainment. Company of Heroes 3 and related names and assets belong to their respective owners. COH3 Stats Open Data is attributed to its publisher.</p>
+  </article>
+  <footer>COHScope · Privacy contact: <a href="mailto:broly19hs@gmail.com">broly19hs@gmail.com</a></footer>
+</main>
+</body>
+</html>
