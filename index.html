@@ -36,8 +36,8 @@
   <header>
     <div class="eyebrow">COHScope · Android</div>
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: 24 October 2026</p>
-    <p class="lead">COHScope is an independently developed, unofficial statistics companion for Company of Heroes 3. This policy describes how the app handles game information, local storage, network requests, and Android backups.</p>
+    <p class="meta">Last updated: 17 November 2026</p>
+    <p class="lead">COHScope is an independently developed, unofficial statistics companion for Company of Heroes 3. This policy describes how the app handles game information, local storage, network requests, Android backups, and optional in-app feedback.</p>
   </header>
   <article class="panel">
     <h2 id="controller">1. Publisher and contact</h2>
@@ -49,11 +49,18 @@
     <p>COHScope displays and analyzes publicly available game-related information, which may include player aliases, Relic profile IDs, leaderboard ratings and rankings, competitive match results, participants, maps, factions, and historical match-time ratings. Player aliases and IDs can be personal data if linked to an identifiable person.</p>
     <p>When you search for a player, the app handles the player alias that you enter. COHScope does not require you to register a COHScope account.</p>
 
+    <h3 id="feedback">Optional feedback and bug reports</h3>
+    <p>If you choose to use Report &amp; Feedback, COHScope sends your selected category (bug, general feedback, or feature request), the message you write, and the app version if available, over HTTPS to a COHScope-operated feedback service. The service creates a random report ID and stores the submission time and review status. No COHScope account, email address, or name is requested, and submitting feedback is optional. The app cannot send you a personal reply through this anonymous form.</p>
+    <p>Messages may contain personal information if you choose to write it. Please do not include passwords, private contact details, or other sensitive information in a report.</p>
+
     <h2 id="external">3. External game-data services</h2>
     <p><strong>Relic Entertainment:</strong> The app makes HTTPS requests to <code>coh3-api.reliclink.com</code> for game data. Depending on the feature, requests include a searched player alias or a Relic profile identifier. This information is used to retrieve player statistics and recent match data.</p>
     <p><strong>COH3 Stats:</strong> The app incorporates dated open-data snapshots from COH3 Stats and may download leaderboard snapshot files via HTTPS from <code>storage.coh3stats.com</code>. Snapshot downloads use date, faction and game-mode information in their request paths.</p>
     <p>As with normal internet requests, these providers may receive technical connection information, including the requesting IP address. COHScope does not control their server-side logging or retention practices.</p>
     <p>For source information, see <a href="https://coh3stats.com/other/open-data" rel="noopener noreferrer">COH3 Stats Open Data</a>.</p>
+
+    <h3 id="feedback-service">COHScope feedback hosting</h3>
+    <p>Optional feedback submissions are processed by a COHScope-operated Cloudflare Worker and stored in a Cloudflare D1 database configured with an EU jurisdiction. The Worker uses the connecting IP address to rate-limit requests but does not store that address in the feedback-report table. Cloudflare may process technical connection information as part of operating and securing its infrastructure. The EU jurisdiction controls where the D1 database runs and stores data; it does not mean that every Worker request is necessarily processed within the EU.</p>
 
     <h2 id="storage">4. Storage on your device</h2>
     <p>The app maintains SQLite databases within its Android application storage. They contain historical competitive match records, match-time ratings, player-statistics caches, and leaderboard snapshots. This enables faster access to previously downloaded data and preservation of locally accumulated match history.</p>
@@ -67,6 +74,9 @@
     <h2 id="purposes">6. Purposes and security</h2>
     <p>Game-related information is processed to perform player lookup, retrieve and display statistics and leaderboards, analyze matches, and support local history and caching. The production data-provider requests identified in the app audit use HTTPS. On-device databases benefit from Android's application-storage protections; platform-managed backups use the relevant provider's security mechanisms.</p>
 
+    <h3>Purpose and legal basis for voluntary feedback</h3>
+    <p>Feedback is used to review bug reports, consider improvements, manage report status, protect the reporting service against abuse, and handle related privacy requests. The publisher relies on legitimate interests under Article 6(1)(f) GDPR in maintaining and improving the app and responding to voluntarily submitted reports, subject to the required balancing of interests. You can use COHScope without submitting feedback. Reports are not used for advertising or sold to third parties. Where applicable, you may object to processing based on legitimate interests.</p>
+
     <h3>Legal basis for processing game data</h3>
     <p>Where the individual COHScope publisher determines the purposes and means of processing personal data in public game profiles and match records, the intended legal basis is legitimate interests under Article 6(1)(f) of the EU General Data Protection Regulation (GDPR). The interests pursued are enabling players and the gaming community to look up publicly available competitive results, analyze performance, and preserve locally accumulated match history. These interests must be balanced against the rights and interests of affected players. Users and other affected individuals may contact the publisher to raise privacy concerns or object on grounds relating to their particular situation.</p>
     <p>The source of game-related player data is Relic's Company of Heroes 3 API and COH3 Stats Open Data. Searching for a player alias is optional and is not a statutory requirement. Without a search term or player selection, some lookup functions cannot provide results. The app does not perform automated decision-making producing legal or similarly significant effects.</p>
@@ -75,15 +85,19 @@
     <p>This static webpage is hosted using GitHub Pages. When visitors open the page, GitHub may process technical connection data, such as IP addresses and request logs, under its own privacy practices. This webpage does not include advertising, analytics scripts, or tracking cookies added by the COHScope developer. For details of GitHub's handling of website-access data, see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">GitHub General Privacy Statement</a>.</p>
 
     <h2 id="analytics">7. Analytics and advertising</h2>
-    <p>COHScope version 1.0.0 does not integrate an advertising SDK or third-party application-analytics SDK. This does not affect data processing that external game-data services may perform when contacted or platform-level diagnostics controlled by Android or Google.</p>
+    <p>COHScope does not integrate an advertising SDK or third-party application-analytics SDK. The optional feedback feature is not an advertising or analytics system. This does not affect data processing that external game-data services may perform when contacted or platform-level diagnostics controlled by Android or Google.</p>
 
     <h2 id="retention">8. Retention and deletion</h2>
     <p>Locally accumulated game information generally remains in the app's databases until deleted as a result of clearing the application's storage, uninstalling the app, or other device storage operations. There is no in-app COHScope account to delete.</p>
     <p><strong>Clearing COHScope application storage can permanently erase match history that is not backed up.</strong> Android may restore backed-up information after reinstallation depending on user and device settings. To manage or remove platform backups, use the settings and controls provided by the backup service.</p>
     <p>COHScope cannot directly delete records held independently by Relic, COH3 Stats, or Android backup providers.</p>
 
+    <p><strong>Feedback-report retention:</strong> Reports held in the COHScope feedback database are scheduled for deletion after they are older than 90 days. A cleanup task is configured to run daily at 04:00 UTC; technical failures could delay deletion. Reports may be deleted earlier when legally required. For private administration, the publisher may export reports to local CSV files. These exports are not removed automatically by the database cleanup task and are deleted separately when no longer required for legitimate support or compliance purposes.</p>
+
     <h2 id="rights">9. Privacy inquiries and rights</h2>
     <p>For questions, requests, or concerns about the app's handling of information, email <a href="mailto:broly19hs@gmail.com">broly19hs@gmail.com</a>. Depending on applicable law and circumstances, data subjects may have rights of access, correction, deletion, restriction, objection, and complaint to a competent supervisory authority. Requests involving data held by independent providers may need to be addressed to those providers.</p>
+
+    <p>If your request concerns feedback you submitted, provide the report ID if you have it, or the approximate submission date and message wording. Because the feedback form does not require an account or contact details, the publisher may be unable to identify a particular report without sufficient information. We may need reasonable verification before disclosing or deleting data associated with an identifiable person.</p>
 
     <h2 id="changes">10. Changes to this policy</h2>
     <p>This page may be updated when the app's features or data-handling practices change. The revision date at the top will identify the current version.</p>
